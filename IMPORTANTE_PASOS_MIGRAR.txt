@@ -1,0 +1,47 @@
+Bqto: 30 de Enero 2025 14:41
+
+------------------------------------------------------------------
+PASOS PARA MIGRAR LA APP Tarjetas_Inv_Prod_Term A ORACLE RDBMS 19C
+Me asiste AI Google Gemini.
+------------------------------------------------------------------
+
+I. Plataforma: Windows 7 Ultimate:
+
+    i.1. Preparar el PC.
+
+         - Requerimiento de HardWare:
+            - Un detalle importante: Oracle 12cR2 pide un mínimo de 2GB de RAM (aunque con 4GB corre decente).
+         Requerimiento de Software:
+            - Microsoft Visual C++ 2013 Redistributable
+                Links de descarga directa (Oficiales de Microsoft):
+                Para 64 bits (x64): Descargar vcredist_x64.exe;
+                Para 32 bits (x86): Descargar vcredist_x86.exe.
+            - Windows 7 tenga, como mínimo, el Service Pack 1 (SP1).
+
+II. Descargar Oracle Client:
+    NOTA: Asegúrate de que los archivos ZIP que tienes del Oracle Client 12cR2 sean también para Windows de 32 bits (NT). Si bajaste la versión "x64", el instalador ni siquiera va a arrancar en tu PC.
+
+    La plataforma usada para mi ensayo = 32 bits.
+    - instantclient-basic-nt-12.2.0.1.0.zip
+    - instantclient-jdbc-nt-12.2.0.1.0.zip
+    - instantclient-sqlplus-nt-12.2.0.1.0.zip
+    - instantclient-tools-nt-12.2.0.1.0.zip
+
+    NOTA2: todos y cada paquete .zip fue descomprimido en una carpeta del PC = C:\oracle\instantclient_12_2\.
+
+III. Configuracion var's de ENTORNO (Sistema):
+    - PATH
+    - TNS_ADMIN
+
+IV. Para conexiones ODBC, se ejecuto dentro de la carpeta 'C:\oracle\instantclient_12_2\'
+    el archivo oracle_odbc.exec.
+
+V. Actualizar Referencias de la App 'Tarj_Inv_Pro_Term(Ora19c) para efectos de compatibilidad:
+    Proyecto -> Referencias:
+        - Se desactivaron:
+            - Microsoft ActiveX Data Object 2.0 Library; y,
+            - Microsoft Data Binding Colletion
+        - Se activo:
+            - Microsoft ActiveX Data Object 2.8 Library.
+
+
